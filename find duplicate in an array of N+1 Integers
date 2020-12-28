@@ -1,0 +1,18 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        //corner case , all the numbers in the array will be same
+        HashMap<Integer, Integer> hash_map = new HashMap<Integer, Integer>();
+        int result=0;
+        int fr=1;
+        for(int i=0;i<nums.length;i++){
+            if(hash_map.containsKey(nums[i])){
+                result=nums[i];
+                break;
+            }
+            else
+                hash_map.put(nums[i],fr);
+        }
+        
+return result;    
+}
+}
