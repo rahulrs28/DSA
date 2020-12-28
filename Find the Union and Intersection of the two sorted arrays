@@ -1,0 +1,24 @@
+class GFG {
+	public static void main (String[] args) {
+	  int t; 
+	  Scanner sc = new Scanner(System.in); 
+	  t=sc.nextInt(); 
+	  for(int x=0;x<t;x++){ 
+	      int size1 = sc.nextInt(); 
+	      int size2 = sc.nextInt(); 
+	      Set<Integer>set1 = new HashSet<Integer>();
+	      for(int i=0;i<size1;i++){ 
+	          int temp = sc.nextInt(); 
+	          set1.add(temp);
+	      } 
+	      Set<Integer>set2 = new HashSet<Integer>(); 
+	      for(int i=0;i<size2;i++){ 
+	          int temp = sc.nextInt(); 
+	          set2.add(temp);
+	      } 
+	      Set<Integer>union =  new HashSet<Integer>(set1); 
+	      union.addAll(set2); //This is for union , for intersection, use retainAll() and for difference use removeAll()
+	      
+	      System.out.println(union.size());
+
+}}}
