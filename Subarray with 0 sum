@@ -1,0 +1,19 @@
+//O(n) solution , can be done using set too, hashmap is fine too, O(n2) solution is also doable always
+static boolean findsum(int arr[],int n)
+{   
+    int i,pre_sum=0;
+    HashMap<Integer,Integer> h=new HashMap<Integer,Integer>();
+    for(i=0;i<n;i++){
+        pre_sum+=arr[i];
+        if(arr[i]==0)return true;
+        if(h.containsKey(pre_sum))
+        return true;
+        if(pre_sum==0)
+        return true;
+        h.put(pre_sum,1);
+    }
+    return false;
+    
+    
+    
+}
