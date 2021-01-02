@@ -1,0 +1,48 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	int tests;
+		Scanner sc = new Scanner(System.in);
+		tests=sc.nextInt();
+		while(tests>0){
+		    int s=sc.nextInt();
+		    int k=sc.nextInt();
+		    int l,r;
+		    int ans=0;
+		    int arr[]=new int[s];
+		    for(int i=0;i<s;i++)
+		    {int x=sc.nextInt();
+		    arr[i]=x;}
+		    //sorting the array,trying in o(n2), space o(1)
+		    Arrays.sort(arr);
+		    for(int i=0;i<s-2;i++){
+		         l=i+1;
+		         r=s-1;
+		         while(l<r){
+		         if(arr[i]+arr[l]+arr[r]==k){
+		             ans=1; break;
+		         }
+		         else
+		         if(arr[i]+arr[l]+arr[r]>k)
+		            {r--;}
+		            else
+		            {l++;}}
+		            
+		    }
+	
+	
+	
+	  
+	  System.out.println(ans);
+	
+	
+	
+	
+		tests=tests-1;}
+	}
+}
