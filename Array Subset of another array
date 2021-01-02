@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		int tests;
+		Scanner sc = new Scanner(System.in);
+		tests=sc.nextInt();
+		while(tests>0){
+     		HashMap<Integer,Integer> map= new HashMap<Integer,Integer>();
+		    int s1=sc.nextInt();
+		    int s2=sc.nextInt();
+		    int arr1[]=new int[s1];
+		    int arr2[]=new int[s2];
+		    for(int i=0;i<s1;i++)
+		    {int x=sc.nextInt();
+		    arr1[i]=x;}
+		    for(int i=0;i<s2;i++)
+		    {int x=sc.nextInt();
+		    arr2[i]=x;}
+		    for(int i:arr1)
+		    map.put(i,1);
+		    int flag=1;
+		    for(int i:arr2){
+		        if(!map.containsKey(i))
+		          flag=0;
+		    }
+		    if(flag==1)
+		    System.out.println("Yes");
+		    else
+		    System.out.println("No");
+		    tests=tests-1;
+	       }
+	}
+}
