@@ -1,0 +1,52 @@
+/*package whatever //do not write package name here */
+//Time Complexity = O(N)
+//Space Complexity=O(2N)
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//idea is to calculate the max from right and left
+		int tests;
+		Scanner sc = new Scanner(System.in);
+		tests=sc.nextInt();
+		while(tests>0){
+		    int k=0;
+		    int size=sc.nextInt();
+		    //input the arr
+		    int [] arr = new int[size];
+		    for(int i=0;i<size;i++){
+		        int x=sc.nextInt();
+		        arr[i]=x;
+		    }
+		    //input complete
+		    //calculate max to right 
+		    int curMaxRight=Integer.MIN_VALUE;
+		    int maxRight[]=new int[size];
+		    for(int i:arr){
+		        curMaxRight=Math.max(curMaxRight,i);
+		        maxRight[k]=curMaxRight;
+		        k=k+1;
+		        
+		    }
+		  
+		    //calculate max to left
+		    int l=size-1;
+		    int curMaxLeft=Integer.MIN_VALUE;
+		    int maxLeft[]=new int[size];
+		    for(int i=size-1;i>=0;i--){
+		        curMaxLeft=Math.max(curMaxLeft,arr[i]);
+		        maxLeft[l]=curMaxLeft;
+		        l--;
+		    }
+		    
+		    //print the total
+		    int totalWater=0;
+		    for(int i=1;i<size-1;i++){
+		       totalWater+= (Math.min(maxLeft[i],maxRight[i])-arr[i]); 
+		    }
+		   System.out.println(totalWater);
+		tests=tests-1;}//end while
+	}
+}
