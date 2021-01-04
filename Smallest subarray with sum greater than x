@@ -1,0 +1,31 @@
+class GFG {
+	public static void main (String[] args) {
+		//code
+		int tests;
+		Scanner sc= new Scanner(System.in);
+		tests=sc.nextInt();
+		while(tests>0){
+		    int size=sc.nextInt();
+		    int x=sc.nextInt();
+		    int arr[]=new int[size];
+		    for(int i=0;i<size;i++){
+		        int xy=sc.nextInt();
+		        arr[i]=xy;
+		    }
+        //input complete
+        int i=0,j=0,sum=0; int min=Integer.MAX_VALUE;
+        while(i<=j&&j<size){
+        while(sum<=x &&j<size){
+        sum=sum+arr[j];
+        j++;}
+        while(sum>x&&i<j){
+        min=Math.min(min,j-i);
+        sum=sum-arr[i];
+        i++;
+        }
+         }
+		    System.out.println(min);
+		    tests=tests-1;
+		}
+	}
+}
