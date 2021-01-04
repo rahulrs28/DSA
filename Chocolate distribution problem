@@ -1,0 +1,33 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		int tests;
+		Scanner sc= new Scanner(System.in);
+		tests=sc.nextInt();
+		while(tests>0){
+		    int size=sc.nextInt();
+		    int arr[]=new int[size];
+		    for(int i=0;i<size;i++){
+		        int x=sc.nextInt();
+		        arr[i]=x;
+		    }
+		    int m=sc.nextInt();
+		    //input complete
+		    //sorting the array
+		    Arrays.sort(arr);
+		    //array sorted
+		    int diff=Integer.MAX_VALUE;
+		    
+		    for(int i=0;(i+m-1)<size;i++){
+		        diff=Math.min(diff,(arr[i+m-1]-arr[i]));
+		    }
+		    System.out.println(diff);
+		    tests=tests-1;		}//while ends
+	}
+}
