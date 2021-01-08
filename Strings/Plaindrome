@@ -1,0 +1,15 @@
+ int isPlaindrome(String str) {
+       int i = 0, j = str.length() - 1; 
+  
+        // While there are characters toc compare 
+        while (i < j) { 
+  
+            // If there is a mismatch 
+            if (str.charAt(i) != str.charAt(j)) 
+                return 0; 
+  
+            // Increment first pointer and 
+            // decrement the other 
+            i++; 
+            j--; 
+        } 
