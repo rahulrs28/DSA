@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {int t;
+ cin>>t;
+ while(t--){
+     int size;
+     cin>>size;
+     int arr[size];
+    for(int i=0;i<size;i++)cin>>arr[i];
+    int k;
+    cin>>k;
+    int good=0;
+    for(int i : arr){
+        if(i<=k)good++;
+    }
+   int bad=0;
+   for(int i=0;i<good;i++){
+       if(arr[i]>k)bad++;
+   }
+   int i=0,j=good-1;
+   int mi=INT_MAX;
+   while(j<size){
+       mi = min(mi,bad);
+       j++;
+       if(j<size && arr[j]>k)bad++;
+       if(arr[i]>k)bad--;
+       i++;
+   }
+   if(mi == INT_MAX)cout<<"0\n";
+   else
+   cout<<mi<<endl;
+ }
+	
+	return 0;
+}
