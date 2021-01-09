@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+void printStr(string s,int a, int b){
+    for(int i=a;i<=b;i++)
+    cout<<s[i];
+}
+void LonPal(string s){
+     int start =0;
+        int end=1;
+        int left,right;
+       
+       
+        for(int i=1;i<s.length();i++){
+             //even part
+            left=i-1;
+            right = i;
+            while(left>=0 && right<s.length() && s[left]==s[right]){
+                if(right-left+1>end){
+                    start=left;
+                    end=right-left+1;
+                }
+                left--;
+                right++;
+            }
+            //odd part
+             left=i-1;
+            right = i+1;
+            while(left>=0 && right<s.length() && s[left]==s[right]){
+                if(right-left+1>end){
+                    start=left;
+                    end=right-left+1;
+                }
+                left--;
+                right++;
+            }
+           
+}
+printStr(s,start,start+end-1);
+}
+int main()
+ { 
+ int test;
+ cin>>test;
+ while(test--){
+     string s;
+     cin>>s;
+     LonPal(s);
+     cout<<endl;
+ }
+
+	return 0;
+}
