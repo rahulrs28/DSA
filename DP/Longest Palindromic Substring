@@ -1,0 +1,40 @@
+class Solution {
+    public String longestPalindrome(String s) {
+        int start =0;
+        int end=1;
+        int left,right;
+        if(s.length()==1)return s;
+        String res ="";
+        
+       
+        for(int i=1;i<s.length();i++){
+             //even part
+            left=i-1;
+            right = i;
+            while(left>=0 && right<s.length() && s.charAt(left)==s.charAt(right)){
+                if(right-left+1>end){
+                    start=left;
+                    end=right-left+1;
+                }
+                left--;
+                right++;
+            }
+            //odd part
+             left=i-1;
+            right = i+1;
+            while(left>=0 && right<s.length() && s.charAt(left)==s.charAt(right)){
+                if(right-left+1>end){
+                    start=left;
+                    end=right-left+1;
+                }
+                left--;
+                right++;
+            }
+             res = s.substring(start,start+end);
+            
+        }
+        
+        return res;
+        
+    }
+}
