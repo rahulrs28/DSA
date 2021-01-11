@@ -1,0 +1,40 @@
+class Parenthesis
+{
+    // Function to return if the paranthesis are balanced or not
+    static boolean ispar(String x)
+    { Stack<Character> set = new Stack<Character>(); 
+      
+        char a;
+        for(int i=0;i<x.length();i++){
+            if(x.charAt(i)=='[' || x.charAt(i)=='{' ||x.charAt(i)=='(' ){
+                char s= x.charAt(i);
+                set.push(s);
+                continue;
+            }
+            if(set.empty())
+            return false;
+            char z = x.charAt(i);
+            switch(z){
+                case ')': a = set.peek();
+                set.pop();
+                if(a=='{' || a=='[')
+                return false;
+                break;
+                case '}': a = set.peek();
+                set.pop();
+                if(a=='(' || a=='[')
+                return false;
+                break;
+                case ']': a = set.peek();
+                set.pop();
+                if(a=='{' || a=='(')
+                return false;
+                break;
+            }
+        }
+        if(set.empty())
+        return true;
+        else
+        return false;
+    }
+}
