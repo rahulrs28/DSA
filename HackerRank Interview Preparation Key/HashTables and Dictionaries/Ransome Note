@@ -1,0 +1,41 @@
+
+    
+    // Complete the checkMagazine function below.
+    static void checkMagazine(String[] magazine, String[] note) {
+         int flag=1; int i;
+     HashMap<String,Integer>map0 = new HashMap<String,Integer>();
+     HashMap<String,Integer>map1 = new HashMap<String,Integer>();
+     for( i=0;i<magazine.length;i++){
+         String put= magazine[i];
+         if(map0.containsKey(put)){
+             map0.put(put,map0.get(put)+1);
+         }else
+         map0.put(put,1);
+     }
+     for( i=0;i<note.length;i++){
+         String put= note[i];
+         if(map1.containsKey(put)){
+             map1.put(put,map1.get(put)+1);
+         }else
+         map1.put(put,1);
+     }
+     for( i =0;i<note.length;i++){
+         String check = note[i];
+         if(!map0.containsKey(check)){
+         flag=0;
+         break;
+     }else
+          if(map0.containsKey(check)){
+         if(map1.get(check)>map0.get(check)){
+             flag=0;
+             break;
+         }
+     }
+     
+
+    }
+    if(flag==1)
+    System.out.println("Yes");
+    else
+    System.out.println("No");
+    }
