@@ -1,0 +1,33 @@
+public String largestNumber(final int[] A) 
+{
+    String[] arr = new String[A.length];
+    for( int i = 0; i < arr.length ; i++)
+    {
+        arr[i] = Integer.toString(A[i]);
+    }
+    Arrays.sort(arr, new arrSort());
+    String s = "";
+    for( int i = arr.length-1 ; i >= 0 ; i--)
+    {
+        s = s + arr[i];
+    }
+    
+    if( s.charAt(0) == '0')
+    {
+        return "0";
+    }
+    
+    return s;
+    
+}
+
+public class arrSort implements Comparator<String>
+{
+    public int compare(String a , String b)
+    {
+        if( (a+b).compareTo(b+a) > 0 )
+            return 1;
+        return -1;
+
+    }
+}
