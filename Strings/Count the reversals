@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+	int tests;
+	cin>>tests;
+	while(tests--){
+	    string str;
+	    cin>>str;
+	    stack<char>s;
+	    int openingBrace=0;
+	    int closingBrace =0;
+	    if(str.length()&1)cout<<"-1\n";
+	    else
+	    {
+	        for(int i=0;i<str.length();i++){
+	            char c = str[i];
+	            if(c=='{'){
+	                s.push(c);
+	                openingBrace++;
+	            }else
+	            if(c=='}' and !s.empty() and s.top()=='{'){
+	                s.pop();
+	                openingBrace--;
+	            }else
+	            closingBrace++;
+	        }
+	        if(openingBrace&1)openingBrace = (openingBrace/2)+1;
+	        else
+	        openingBrace=openingBrace/2;
+	        if(closingBrace&1)closingBrace = (closingBrace/2)+1;
+	        else
+	        closingBrace=closingBrace/2;
+	        cout<<closingBrace+openingBrace<<endl;
+	    }
+	}
+	return 0;
+}
