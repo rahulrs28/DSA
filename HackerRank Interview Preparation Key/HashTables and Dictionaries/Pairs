@@ -1,0 +1,15 @@
+int count = 0;
+    HashSet<Integer> set = new HashSet<>();
+    for(int num : arr)
+    {
+        set.add(num);
+    }
+
+    for(int number : arr)
+    {
+        if(set.contains(number + k))
+        {
+            count++;
+        }
+    }
+    return count;
