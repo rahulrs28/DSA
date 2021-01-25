@@ -1,0 +1,28 @@
+class Solve {
+    int[] findTwoElement(int arr[], int n) {
+       int nums[]=new int[n];
+       boolean present[] = new boolean[n+1];
+       int missing=-1;
+       //find the missing num
+       for(int i=0;i<n;i++){
+           if(arr[i]>0 && arr[i]<=n)
+           present[arr[i]]=true;
+           
+       }
+       for(int i=1;i<=n;i++){
+           if(!present[i]){missing=i; break;}
+       }
+       //find the repeating
+       int rep=-1;
+       HashSet<Integer>set=new HashSet<Integer>();
+       for(int i=0;i<n;i++){
+           if(set.contains(arr[i]))rep=arr[i];
+           else
+           set.add(arr[i]);
+           
+       }
+      nums[0]=rep; 
+      nums[1]=missing;
+       return nums;
+    }
+}
