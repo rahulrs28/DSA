@@ -1,0 +1,11 @@
+ public int firstUniqChar(String s) {
+        int[] data= new int[26];
+        //finding the frequencies
+        for (int i = 0; i < s.length(); i++) 
+             data[s.charAt(i)-'a']++;
+             //checking whose freq is 1 and returning
+        for (int i = 0; i < s.length(); i++) 
+            if (data[s.charAt(i)-'a'] == 1) 
+                return i;
+        return -1;
+    }
