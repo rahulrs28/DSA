@@ -1,3 +1,6 @@
+
+//ideally do it with binary search in o(Logn)
+
 class Solution {
     public int search(int[] nums, int target) {
         int ans=-1;
