@@ -1,0 +1,4 @@
+void printIncreasing(int n){
+System.out.println(n);
+printIncreasing(n+1);
+}
