@@ -1,0 +1,18 @@
+class DynamicProgramming{
+    
+    // function to count ways to reach mth stair
+    Long countWays(int m){
+      //base case
+      long one=1;
+      long zero=0;
+      if(m==0)return one; //there is 1 way from 0->0
+      else
+      if(m<0)return zero;//there is no way from -1->0
+      long nm1 =countWays(m-1);
+      long nm2= countWays(m-2);
+      long ans=nm1+nm2;
+      return ans;
+        
+    }
+    
+}
