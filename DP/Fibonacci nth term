@@ -1,0 +1,12 @@
+public int fib(int n,int[]arr){
+//base case
+if(n==0||n==1)
+return 1;
+if(arr[n]!=0)
+   return arr[n];
+int fibnm1=fib(n-1);
+int fibnm2=fib(n-2);
+int sum=fibnm1+fibnm2;
+arr[n]=sum;
+return sum;
+}
