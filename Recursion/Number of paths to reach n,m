@@ -1,0 +1,7 @@
+ long numberOfPaths(int m, int n) {
+        long one=1;
+        if(m==1||n==1)return one;
+       
+        return numberOfPaths(m-1,n)+numberOfPaths(m,n-1);
+    }
+    
