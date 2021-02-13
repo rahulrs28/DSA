@@ -5,7 +5,7 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class GFG {
+class GFG {   
 	public static void main (String[] args) {
 		//idea is to calculate the max from right and left
 		int tests;
