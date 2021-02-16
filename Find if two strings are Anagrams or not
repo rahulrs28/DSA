@@ -4,7 +4,7 @@ class GFG {
 	// are an anagram of each other 
 	static boolean areAnagram(String str1, String str2) 
 	{ 
-
+ 
 		HashMap<Character, Integer> hmap1 
 			= new HashMap<Character, Integer>(); 
 		HashMap<Character, Integer> hmap2 
