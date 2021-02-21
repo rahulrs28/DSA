@@ -1,0 +1,12 @@
+    Node reverseList(Node head)
+    { Node p=null,current=head,next=null;
+        while(current!=null)
+        {
+            next=current.next;
+            current.next=p;
+            p=current;
+            current=next;
+        }
+        head=p;
+        return head;
+    }
