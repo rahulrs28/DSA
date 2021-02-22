@@ -1,0 +1,9 @@
+int minValue(Node node)
+    {  if(node==null)
+         return  Integer.MAX_VALUE;
+       int min =    Integer.MAX_VALUE;
+       int left= minValue(node.left);
+       int right=minValue(node.right);
+       min = Math.min(node.data,Math.min(left,right));
+       return min;
+    }
