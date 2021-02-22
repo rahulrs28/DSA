@@ -1,0 +1,15 @@
+ public static int minDiff = Integer.MAX_VALUE;
+    // Return the minimum absolute difference between any tree node and the integer K
+    static int maxDiff(Node  root, int K) 
+    { 
+      if(root==null)return Integer.MAX_VALUE;
+      
+      minDiff = Math.min(minDiff,Math.abs(K-root.data));
+      
+     // System.out.println(minDiff);
+      int left= maxDiff(root.left,K);
+      int right=maxDiff(root.right,K);
+      return minDiff;
+      
+      
+    } 
