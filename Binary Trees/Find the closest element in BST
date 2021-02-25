@@ -11,5 +11,5 @@
       int right=maxDiff(root.right,K);
       return minDiff;
       
-      
+         
     } 
