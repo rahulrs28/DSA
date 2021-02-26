@@ -1,0 +1,19 @@
+class Solution {    
+    public boolean wordBreak(String s, List<String> wordDict) {
+        if(wordDict == null || wordDict.size() == 0){
+            return false;
+        }      
+        //index stores index that (0, index) is true , can be word break
+        List<Integer> index = new ArrayList<>();
+        index.add(0);
+        for(int i = 1;i <= s.length(); i++){
+            for(int id : index){
+                if(wordDict.contains(s.substring(id, i))){
+                    index.add(i);
+                    break;
+                }
+            }            
+        }
+        return index.contains(s.length());
+    }
+}
