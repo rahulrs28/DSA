@@ -28,7 +28,7 @@ class GFG {
 		    }
 		    if(flag==1)
 		    System.out.println("Yes");         
-		    else
+		    else 
 		    System.out.println("No");
 		    tests=tests-1;
 	       }
