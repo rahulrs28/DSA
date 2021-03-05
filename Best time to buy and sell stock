@@ -1,5 +1,5 @@
 
-
+  
 //This is the optimal solution, naive sol is o(n2) by using two loops and checking max profit for all prices[i]
 class Solution {
     public int maxProfit(int[] prices) {
