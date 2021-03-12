@@ -13,7 +13,7 @@ class Profit {
               max_price=Math.max(max_price,price[i]); 
 		    int  cur_max_profit = max_price-price[i];
 			profit[i] = Math.max(profit[i + 1],cur_max_profit); 
-		} 
+		}  
           
         //calculate max profit in second transaction
 		int min_price = price[0]; 
