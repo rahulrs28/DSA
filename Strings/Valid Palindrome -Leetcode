@@ -1,0 +1,12 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        String input= helperMethod(s);
+        //palindrome logic 
+        String str2 = new StringBuilder(input).reverse().toString();
+	    return input.equalsIgnoreCase(str2);
+    }
+    public String helperMethod(String s){
+     return  s.replaceAll("\\W", "").replaceAll("_", "");  
+    }
+}
+
