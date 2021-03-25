@@ -1,0 +1,45 @@
+public class Solution {
+public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+ListNode ans=null;
+ListNode p= headA;
+ListNode r =headB;
+int lenl1=0,lenl2=0;
+if(headA==null||headB==null)
+return null;
+while(p!=null)
+{
+p=p.next;
+lenl1++;
+
+    }
+    while(r!=null)
+    {
+        r=r.next;
+        lenl2++;
+        
+    }
+    int h =Math.abs(lenl1-lenl2);
+    
+       if(lenl1>lenl2)
+       {
+           while(h-->0)
+               headA=headA.next;
+       }
+    else
+    {
+      while(h-->0)
+         headB=headB.next;  
+    }
+    while(headA!=null&&headB!=null)
+    {
+        if(headA==headB)
+        { 
+            ans=headA;
+             break;
+        }
+        headA=headA.next;
+        headB=headB.next;
+    }
+    return ans;
+}
+}
