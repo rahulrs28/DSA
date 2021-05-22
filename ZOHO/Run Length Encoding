@@ -1,0 +1,21 @@
+
+	String encode(String str)
+	{       
+        int count = 1;
+        char currentChar = str.charAt(0);
+        StringBuilder encoded_string = new StringBuilder();
+        for(int i = 1; i < str.length(); i++) {
+            if(str.charAt(i) != currentChar) {
+                encoded_string.append(currentChar);
+                encoded_string.append(count);
+                currentChar = str.charAt(i);
+                count = 1;
+            }else{
+                count++;
+            }
+        }
+        encoded_string.append(currentChar);
+        encoded_string.append(count); 
+        
+        return encoded_string.toString();         
+	}
